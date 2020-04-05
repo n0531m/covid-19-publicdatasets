@@ -13,3 +13,5 @@ The source being in Google BigQuery, wrote these as BigQuery related resources
 * [sql_daily_summary.sql](sql_daily_summary.sql) : a sql that utilized the UDF above and create a daily summary table. Can be used to create a view, but also can be scheduled to materilize. 
 * [update_bq_scheduled_summary_query.sh](update_bq_scheduled_summary_query.sh) : a shell script to setup a scheduled query that will run the sql above at a set interval (set to an hour), and store results in the given destination. 
 
+note : country names can be sometime tricky and complex to have a uniform agreement on. whatever chosen here has no intension to be on any side, but rather focus on standardizing the field values where it should be. With that, it should also be easy to switch it to whatever appropriate for the context of the use case. thanks you for your understanding. 
+
