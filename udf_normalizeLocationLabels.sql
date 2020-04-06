@@ -1,6 +1,6 @@
 #StandardSQL
 CREATE OR REPLACE FUNCTION
-  `moritani-opendata`.covid19.normalizeLocationLabels (country_region string, province_state string) AS ((
+  covid19.normalizeLocationLabels (country_region string, province_state string) AS ((
     SELECT
       STRUCT(
         CASE
@@ -16,7 +16,8 @@ CREATE OR REPLACE FUNCTION
           WHEN country_region IN ("Republic of Ireland", "Ireland")                   THEN "Ireland"
           WHEN country_region IN ("Iran (Islamic Republic of)", "Iran")               THEN "Iran"
           WHEN country_region IN ("Czechia", "Czech Republic")                        THEN "Czech Republic"
-          
+          WHEN country_region IN ("Dominica", "Dominican Republic")                   THEN "Dominican Republic"
+
           when country_region IN ("Cabo Verde")                                       THEN "Cape Verde"
           when country_region IN ("Congo (Kinshasa)")                                 THEN "Democratic Republic of the Congo"
           when country_region IN ("Congo (Brazzaville)")                              THEN "Republic of the Congo"
